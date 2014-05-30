@@ -1,0 +1,12 @@
+{
+  "name": "client-crypto",
+  "version": "0.0.0",
+  "description": "Proof of concept of TOFU client side encryption",
+  "main": "index.js",
+  "author": "Petros Angelatos",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.3.2",
+    "morgan": "^1.1.1"
+  }
+}
