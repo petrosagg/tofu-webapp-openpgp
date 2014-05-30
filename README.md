@@ -6,6 +6,18 @@ Using client side crypto usually comes with the problem of trusting the server s
 
 This is an attempt to partially solve this problem. Partially because when the user first loads the webapp the same problems mentioned above exist. But after the initial load everything has to be signed by a specific GPG key and there is no way for the server to force a change to the client-side code.
 
+## Threat model
+This project protects the user given that:
+
+* The user uses Chrome
+* The user visits the webapp for the first time before the server is compromised
+* The user doesn't clear his cache
+
+When any of these happen:
+
+* The server gets fully compromised by a malicious party but the malicous party doesn't have the private keys for code signing
+* The domain name is taken over and fake HTTPS certificates are presented
+
 ## Applications
 The most prominent application of this idea is WebMail providers that want to offer secure, end-to-end encryption to their users and at the same time defend from a malicious attacker or the government wanting to compromise their security in the future. But this isn't the only application requiring end-to-end encryption. Other sites could be file sharing sites like mega.co.nz, chatting application and any privacy preserving app in general.
 
