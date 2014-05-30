@@ -2,12 +2,12 @@ OpenPGP verified WebApp
 ========================
 
 ## Overview
-Using client side crypto usually comes with the problem of trusting the server serving the files. Even if a webapp uses OpenPGP.js to encrypt everything client-side, it is insecure in the event where the server is compromised. The attacker can send an altered version of the webapp including malicius code and this will go undetectable by the user.
+Using client side crypto usually comes with the problem of trusting the server serving the files. Even if a webapp uses OpenPGP.js to encrypt everything client-side, it is insecure in the event where the server is compromised. The attacker can send an altered version of the webapp including malicious code and this will go undetectable by the user.
 
 This is an attempt to partially solve this problem. Partially because when the user first loads the webapp the same problems mentioned above exist. But after the initial load everything has to be signed by a specific GPG key and there is no way for the server to force a change to the client-side code.
 
 ## Applications
-The most prominent application of this idea is WebMail providers that want to offer secure, end-to-end encryption to their users and at the same time defend from a malicious attacker or the government wanting to compromise their security in the future. But this isn't the only application requiring end-to-end encryption. Other sites could be file shareing sites like mega.co.nz, chatting application and any privacy preserving app in general.
+The most prominent application of this idea is WebMail providers that want to offer secure, end-to-end encryption to their users and at the same time defend from a malicious attacker or the government wanting to compromise their security in the future. But this isn't the only application requiring end-to-end encryption. Other sites could be file sharing sites like mega.co.nz, chatting application and any privacy preserving app in general.
 
 ## How to run
 Clone the repo, run `npm install` and then run `node index.js`. Then, navigate to `http://localhost:1337/index.html` and open your dev tools. Notice that after the first load the only requests logged in your console are the clearsigned javascript files. Everything else is always run from the browsers cache.
